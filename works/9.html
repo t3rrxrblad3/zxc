@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/10be61e7c8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="about">
+            <img class="avatar" src="../avatar.jpeg" alt="avatar">
+            <a class="name" href="../index.html">t3rrxblad3</a>
+        </div>
+        <div class="header-links">
+            <a class="header-link" href="https://www.youtube.com/channel/UCXxTaXNhakBwG_vhQPb622g"><i class="fa-brands fa-youtube"></i></a>
+            <a class="header-link" href="https://t.me/just_aku"><i class="fa-brands fa-telegram"></i></a>
+            <a class="header-link" href="https://www.instagram.com/t3rrxrblad333333/"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="content">
+        <h2 class="description">Введи число і дійзнайся порядок букви в алфавіті</h2>
+        <div class="menu">
+            <p>Введіть число</p>
+            <input type="text" class="number">
+            <button>Дізнатися</button>
+            <div class="out"></div>
+        </div>
+        <div class="arrows">
+            <a href="8.html"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="../index.html" class="home"><i class="fa-solid fa-house"></i></a>
+            <a href="10.html"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <script>
+            document.querySelector("button").onclick = myClick
+            function myClick() {
+                let number = document.querySelector(".number").value
+                function alphabet(array, value) {
+                    for (let i = 0; i < array.length; i++) {
+                        if (i + 1 === Number(value)) return array[i];
+                    }
+                    return -1;
+                }
+
+                let arr = ['а', 'б', 'в', 'г', 'ґ', 'д', 'е', 'є', 'ж', 'з', 'и', 'і', 'ї', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ь', 'ю', 'я'];
+                document.querySelector(".out").innerHTML += ("Під номером " + number + " знаходиться літера " + alphabet(arr, number) +"<br>");
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>

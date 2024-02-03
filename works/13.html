@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/10be61e7c8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="about">
+            <img class="avatar" src="../avatar.jpeg" alt="avatar">
+            <a class="name" href="../index.html">t3rrxblad3</a>
+        </div>
+        <div class="header-links">
+            <a class="header-link" href="https://www.youtube.com/channel/UCXxTaXNhakBwG_vhQPb622g"><i
+                    class="fa-brands fa-youtube"></i></a>
+            <a class="header-link" href="https://t.me/just_aku"><i class="fa-brands fa-telegram"></i></a>
+            <a class="header-link" href="https://www.instagram.com/t3rrxrblad333333/"><i
+                    class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="content">
+        <h2 class="description">Червоні кульки рухатимуться за твоїм курсором</h2>
+        <canvas id="myCanvas"></canvas>
+        <div class="arrows">
+            <a href="12.html"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="../index.html" class="home"><i class="fa-solid fa-house"></i></a>
+            <a href="14.html"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                const canvas = document.getElementById('myCanvas');
+                const ctx = canvas.getContext('2d');
+
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                const objects = [];
+
+                class FollowObject {
+                    constructor(x, y) {
+                        this.x = x;
+                        this.y = y;
+                    }
+
+                    draw() {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, 10, 0, Math.PI * 2, false);
+                        ctx.fillStyle = 'red';
+                        ctx.fill();
+                    }
+                }
+
+                function animate() {
+                    requestAnimationFrame(animate);
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    objects.forEach(object => {
+                        object.draw();
+                    });
+                }
+
+                animate();
+
+                canvas.addEventListener('mousemove', (event) => {
+                    const rect = canvas.getBoundingClientRect();
+                    const x = event.clientX - rect.left;
+                    const y = event.clientY - rect.top;
+
+                    objects.push(new FollowObject(x, y));
+
+                    if (objects.length > 50) {
+                        objects.shift();
+                    }
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>

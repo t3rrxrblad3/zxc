@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+
+    background: #cecece;
+}
+
+.blue{
+    color: rgb(53,100,230);
+}
+
+.header{
+    padding: 0px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ececec;
+    box-shadow: 0px 3px 5px 0px rgba(28, 28, 28, 0.15);
+    height: 8vh;
+}
+
+.about{
+    display: flex;
+    align-items: center;
+}
+.name{
+    padding-left: 10px;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 25px;
+}
+.avatar{
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}
+
+.fa-brands{
+    padding: 0px 4px;
+    font-size: 26px;
+    color: rgb(53, 100, 230);
+    transition: 0.2s;
+}
+.fa-brands:hover{
+    transform: translateY(2px);
+}
+
+.main-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 15%;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 15%;
+}
+
+.project-card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #ececec;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 200px;
+    min-width: 200px;
+    padding: 25px 65px;
+    transition: 0.25s;
+}
+.project-card:hover{
+    transform: translateY(2px);
+}
+
+.subtitle{
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.project-link{
+    border-radius: 7px;
+    background: rgb(53, 100, 230);
+    padding: 10px 25px;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+.project-link a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.project-link:hover{
+    transform: translateY(2px); 
+    box-shadow: 0px 0px 5px 0px rgba(53,100,230,1);
+}
+
+
+.about-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 15%;
+}
+
+.about-me{
+    display: flex;
+    margin-bottom: 20px;
+}
+.photo{
+    margin: 0px 10px 10px 0;
+    width: 50%;
+    height: 50%;
+    border-radius: 8px;
+}
+
+.menu{
+    border-radius: 8px;
+    padding: 10px;
+    background: #ffffff;
+    width: 33%;
+    transition: 0.2s;
+}
+.menu:hover{
+    transform: translateY(1px);
+}
+.out{
+    font-size: 14px;
+    font-weight: 500;
+}
+p{
+    font-weight: 600;
+}
+input{
+    margin: 5px;
+    border-radius: 6px;
+    background: #e8e8e8;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    transition: 0.2s;
+    font-weight: 700;
+}
+input:hover{
+    transform: translateY(2px);
+}
+button{
+    background: rgb(53, 100, 230);
+    border: none;
+    padding: 5px 25px;
+    border-radius: 6px;
+    color: #ffffff;
+    transition: 0.2s;
+    font-weight: 500;
+}
+button:hover{
+    transform: translateY(2px);
+}
+.arrows a i{
+    color: rgb(53, 100, 230);
+    transition: 0.2s;
+}
+.arrows a i:hover{
+    transform: translateY(1px);
+}
+
+.mainBlock{
+    margin: 0 auto;
+    margin-top: 30px;
+    height: 400px;
+    width: 400px;
+    width: 0 auto;
+    border:  1px solid black;
+}
+.block{
+
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+.black{
+    background: #091809;
+}
+.white{
+    background: #fff;
+}
+
+.homepage{
+    bottom: 5px;
+    left: 10px;
+    position: absolute;
+}
+.homepage-img{
+    width: 75px;
+    height: 75px;
+    border-radius: 6px;
+}
+
+@media only screen and (max-width: 500px) {
+    .about-me{
+        display: flex;
+        flex-direction: column;
+    }
+}

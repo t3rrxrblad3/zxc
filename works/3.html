@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/10be61e7c8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="about">
+            <img class="avatar" src="../avatar.jpeg" alt="avatar">
+            <a class="name" href="../index.html">t3rrxblad3</a>
+        </div>
+        <div class="header-links">
+            <a class="header-link" href="https://www.youtube.com/channel/UCXxTaXNhakBwG_vhQPb622g"><i class="fa-brands fa-youtube"></i></a>
+            <a class="header-link" href="https://t.me/just_aku"><i class="fa-brands fa-telegram"></i></a>
+            <a class="header-link" href="https://www.instagram.com/t3rrxrblad333333/"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="content">
+        <h2 class="description">Введіть числа та порахуйте Дискримінант квадратного рівняння</h2>
+        <div class="menu">
+            <p>Введіть перше число</p>
+            <input type="text" class="numberA">
+            <p>Введіть друге число</p>
+            <input type="text" class="numberB">
+            <p>Введіть третє число</p>
+            <input type="text" class="numberC">
+            <button class="button">Порахувати</button>
+            <div class="outlet"></div>
+        </div>
+        <div class="arrows">
+            <a href="2.html"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="../index.html" class="home"><i class="fa-solid fa-house"></i></a>
+            <a href="4.html"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <script>
+
+            document.querySelector('.button').onclick = myClick
+            function myClick() {
+                let numberA = document.querySelector('.numberA').value
+                let numberB = document.querySelector('.numberB').value
+                let numberC = document.querySelector('.numberC').value
+                let ans
+                let resul = (numberB * numberB) - (4 * numberA * numberC)
+                document.querySelector(".outlet").innerHTML = resul
+                if (resul == 0) {
+                    ans = "Дескрімінант " + resul + " має 1 корінь";
+                    let root1 = -numberB / (2 * numberA);
+                    document.querySelector(".outlet").innerHTML = ans + '<br>';
+                    document.querySelector(".outlet").innerHTML += 'Корінь: ' + root1;
+                } else if (resul > 0) {
+                    ans = "Дескрімінант " + resul + " має 2 корені";
+                    let root1 = (-numberB + Math.sqrt(resul)) / (2 * numberA);
+                    let root2 = (-numberB - Math.sqrt(resul)) / (2 * numberA);
+                    document.querySelector(".outlet").innerHTML = ans + '<br>'
+                    document.querySelector(".outlet").innerHTML += 'Перший корінь: ' + Math.round(root1) + '<br>'
+                    document.querySelector(".outlet").innerHTML += 'Другий корінь: ' + Math.round(root2)
+                } else {
+                    ans = "Дескрімімант " + resul + " не має коренів";
+                    document.querySelector(".outlet").innerHTML = ans;
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

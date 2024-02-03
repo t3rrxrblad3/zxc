@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/10be61e7c8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="about">
+            <img class="avatar" src="../avatar.jpeg" alt="avatar">
+            <a class="name" href="../index.html">t3rrxblad3</a>
+        </div>
+        <div class="header-links">
+            <a class="header-link" href="https://www.youtube.com/channel/UCXxTaXNhakBwG_vhQPb622g"><i class="fa-brands fa-youtube"></i></a>
+            <a class="header-link" href="https://t.me/just_aku"><i class="fa-brands fa-telegram"></i></a>
+            <a class="header-link" href="https://www.instagram.com/t3rrxrblad333333/"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="content">
+        <h2 class="description">Розсортуй міста мільйонники</h2>
+        <div class="menu">
+            <p>Сортування за алфавітом</p>
+            <div id="worldCapitalsAlph"></div>
+            <p>Сортуванння за кількістю наседення </p>
+            <div id="worldCapitalsNumber"></div>
+            <output></output>
+        </div>
+        <div class="arrows">
+            <a href="10.html"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="../index.html" class="home"><i class="fa-solid fa-house"></i></a>
+            <a href="12.html"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <script>
+            let worldCapitals = {
+            'Київ': 2804000,
+            'Лондон': 8982000,
+            'Токіо': 13929286,
+            'Берлін': 3769495,
+            'Париж': 2140526,
+            }
+            
+            let worldCapitalsAlph = Object.keys(worldCapitals).sort()
+            let worldCapitalsNumber = Object.keys(worldCapitals).sort((a, b) => worldCapitals[a] - worldCapitals[b])
+    
+        function displayCitiesAlph() {
+            let alphaDiv = document.getElementById('worldCapitalsAlph');
+            worldCapitalsAlph.forEach(city => {
+                alphaDiv.innerHTML += `<p>${city} : ${worldCapitals[city]}</p>`;
+            });
+        }
+        function displayCitiesNumber() {
+            let numberDiv = document.getElementById('worldCapitalsNumber');
+            worldCapitalsNumber.forEach(city => {
+                numberDiv.innerHTML += `<p>${city} : ${worldCapitals[city]}</p>`;
+            });
+        }
+        displayCitiesAlph();
+        displayCitiesNumber();
+        </script>
+    </div>
+</body>
+
+</html>
